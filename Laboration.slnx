@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="Common.Tests/Common.Tests.csproj" />
+  <Project Path="Common/Common.csproj" />
+  <Project Path="Elves.Tests/Elves.Tests.csproj" Id="ac3080df-4907-49d9-b55a-360157bc7524" />
+  <Project Path="Elves/Elves.csproj" Id="31fed801-9f2a-4ade-8cee-ddb4eac18fbc" />
+  <Project Path="NotQuiteLisp/NotQuiteLisp.csproj" Id="41031110-501f-4583-a9fd-3147ed26de72" />
+  <Project Path="TyrannyRocket.Tests/TyrannyRocket.Tests.csproj" Id="2bb2ca35-62bc-4e80-8671-cfb112b3b5ba" />
+  <Project Path="TyrannyRocket/TyrannyRocket.csproj" Id="619f6d4d-50e5-429f-9672-a32cbe9fddf1" />
+  <Project Path="Y2015D01.Tests/NotQuiteLisp.Tests.csproj" Id="cac32a6f-ba85-4eaa-b351-bc33e7838f29" />
+  <Project Path="Y2021D01.Tests/Y2021D01.Tests.csproj" />
+  <Project Path="Y2021D01/Y2021D01.csproj" />
+</Solution>
