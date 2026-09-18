@@ -6,36 +6,56 @@ namespace Elves
 {
     public class ElfTranslator
     {
+        private int _streak;
+        private char _currentChar;
+
+
+        private readonly char _defaultChar = ' ';
+        private bool _isDefaultChar => _currentChar == _defaultChar;
+
+        
         public string Translate(string input)
         {
-            var charachters = input.ToCharArray();
-            var currentChar = "";
-            int amountInARow = 0;
+            var charArray = input.ToCharArray();
+            var sequence = "";
 
-            string total = "";
+            _currentChar = _defaultChar;
 
-            for(int current = 0; current < charachters.Length; current++)
+            for (int i = 0; i < charArray.Length; i++) 
             {
-                // Set new char
-                if(currentChar == "")
+                // Set char to match against later
+                if (_isDefaultChar)
                 {
-                    currentChar = charachters[current].ToString();
-                    amountInARow++;
+                    _currentChar = charArray[i];
+                    _streak++;
                 }
-                
-                //Next char is a match
-                if(currentChar == charachters[current + 1].ToString())
+
+                // IF last step in array OR char array is only one. (Prevent out of bounds)
+                if(i == charArray.Length - 1 || charArray.Length == 1)
                 {
-                    amountInARow++;
+                    return sequence += $"{_streak}{_currentChar}";
+                }
+
+                // See if next char is the same as current
+                
+                if (_currentChar == charArray[i + 1])
+                {
+                    _streak++;
                 }
                 else
                 {
-                    
+                    sequence += $"{_streak}{_currentChar}";
+
+                    _currentChar = _defaultChar;
+                    _streak = 0;
                 }
-                return "GÖR KLART METODEN FÖRST";
-
-
             }
+
+            return sequence;
+
         }
+
+
+        
     }
 }
