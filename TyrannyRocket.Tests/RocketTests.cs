@@ -31,7 +31,7 @@ namespace TyrannyRocket.Tests
         [InlineData(14, 2)]
         public void CalculateFuelRequirements_ReturnsExpect(int mass, int expected)
         {
-
+            // AAA
             // Arrange
             var sut = new Rocket();
 
