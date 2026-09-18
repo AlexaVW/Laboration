@@ -1,0 +1,39 @@
+name: CI Del1
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Bygg och testa
+        uses: actions/checkout@v7
+
+      - name: Install .NET 10
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: dotnet Restore
+        run: dotnet restore
+
+      - name: dotnet Build
+        run: dotnet build --no-restore --configuration Release
+
+      - name: dotnet Test
+        run: --no-build --configuration Release
+      # varför gör vi restore, build och test som tre separata steg istället för ett?
+      # Ett steg i staget så den väntar på att steget inna blir klart först.
+        
+        
+  
+  
+  
