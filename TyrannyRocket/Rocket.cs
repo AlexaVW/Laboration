@@ -14,18 +14,18 @@ namespace TyrannyRocket
         }
 
         //What is the sum of the fuel requirements
-        public int CalculateFuelRequirements(int mass) 
+        public int CalculateFuelRequirements(int mass)
         {
             //Calculate fuel for initial spacecraft mass
             var fuelAmountLeft = CalculateFuelByMass(mass);
             var totalFuel = fuelAmountLeft;
 
             //Calculate fuel requirements
-            while (fuelAmountLeft > 0) 
+            while (fuelAmountLeft > 0)
             {
                 fuelAmountLeft = CalculateFuelByMass(fuelAmountLeft);
 
-                if (fuelAmountLeft >= 0) 
+                if (fuelAmountLeft >= 0)
                     totalFuel += fuelAmountLeft;
             }
 

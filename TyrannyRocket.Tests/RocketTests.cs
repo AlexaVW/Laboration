@@ -9,8 +9,8 @@ namespace TyrannyRocket.Tests
 
         //Bränslet för en modul är dess massa delat med 3, avrundat nedåt, minus 2.
         [Theory]
-        [InlineData(12,2)]
-        [InlineData(14,2)]
+        [InlineData(12, 2)]
+        [InlineData(14, 2)]
         [InlineData(1969, 654)]
         [InlineData(100756, 33583)]
         public void CalculateFuelByMass_ReturnsExpected(int mass, int expected)
@@ -39,7 +39,7 @@ namespace TyrannyRocket.Tests
             var actual = sut.CalculateFuelRequirements(mass);
 
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
 
         }
     }

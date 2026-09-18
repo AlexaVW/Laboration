@@ -10,7 +10,7 @@ var rocket = new Rocket();
 
 var totalFuel = 0;
 
-foreach (var mass in massArray) 
+foreach (var mass in massArray)
 {
     var fuelRequirements = rocket.CalculateFuelRequirements(mass);
     totalFuel += fuelRequirements;
