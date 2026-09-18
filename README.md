@@ -1,4 +1,5 @@
 # Laboration System25 – TDD med Advent of Code
+![CI](https://github.com/<användarnamn>/<repo>/actions/workflows/ci.yml/badge.svg)
 
 Laborationsinstruktionerna finns i [LABORATION.md](LABORATION.md).
 
