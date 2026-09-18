@@ -18,3 +18,5 @@ foreach (var mass in massArray)
 
 Console.WriteLine("Fuel Requirements");
 Console.WriteLine(totalFuel);
+
+Console.WriteLine("---------------");
