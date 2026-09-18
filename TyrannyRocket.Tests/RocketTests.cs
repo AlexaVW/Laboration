@@ -28,7 +28,7 @@ namespace TyrannyRocket.Tests
         [Theory]
         [InlineData(100756, 50346)]
         [InlineData(1969, 966)]
-        [InlineData(14, 0)]
+        [InlineData(14, 2)]
         public void CalculateFuelRequirements_ReturnsExpect(int mass, int expected)
         {
 
