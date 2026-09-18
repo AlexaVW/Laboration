@@ -29,7 +29,7 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: dotnet Test
-        run: --no-build --configuration Release
+        run: dotnet test --no-build --configuration Release
       # varför gör vi restore, build och test som tre separata steg istället för ett?
       # Ett steg i staget så den väntar på att steget inna blir klart först.
         
