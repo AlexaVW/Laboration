@@ -12,6 +12,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      BUILD_CONFIGURATION: Release
 
     steps:
       - name: Bygg och testa
@@ -26,14 +28,19 @@ jobs:
         run: dotnet restore
 
       - name: dotnet Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build --no-restore --configuration ${{env.BUILD_CONFIGURATION}}
 
       - name: dotnet Test
-        run: dotnet test --no-build --configuration Release
+        run: dotnet test --no-build --configuration ${{env.BUILD_CONFIGURATION}}
       # varför gör vi restore, build och test som tre separata steg istället för ett?
       # Ett steg i staget så den väntar på att steget inna blir klart först.
-        
-        
-  
-  
-  
+
+      - name: INFO
+        env: 
+          STARTAD_AV: ${{github.actor}}
+          HANDELSE: ${{github.event_name}}
+          GREN: ${{github.ref_name}}
+        run: |
+          echo "Startad av $STARTAD_AV — händelse: $HANDELSE — gren: $GREN"
+          echo "Startad av $STARTAD_AV — händelse: $HANDELSE — gren: $GREN" > $GITHUB_STEP_SUMMARY
+          
